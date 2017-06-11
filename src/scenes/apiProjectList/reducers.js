@@ -1,4 +1,8 @@
 import { handleActions } from 'redux-actions';
+import { over, lensPath, pathEq, inc } from 'ramda';
+
+import * as actions from './actions';
+
 
 /**
  * Initial state
@@ -13,6 +17,7 @@ const initialState = {
       visibility: 'private',
       author: 'Vladimir Gorej',
       githubConnected: true,
+      accessCount: 0,
     },
     {
       name: 'apiproject2',
@@ -21,6 +26,7 @@ const initialState = {
       visibility: 'private',
       author: 'Team 1',
       githubConnected: true,
+      accessCount: 0,
     },
     {
       name: 'apiproject3',
@@ -29,6 +35,7 @@ const initialState = {
       visibility: 'public',
       author: 'Vladimir Gorej',
       githubConnected: false,
+      accessCount: 0,
     },
     {
       name: 'apiproject4',
@@ -37,6 +44,7 @@ const initialState = {
       visibility: 'private',
       author: 'Vladimir Gorej',
       githubConnected: false,
+      accessCount: 0,
     },
     {
       name: 'apiproject5',
@@ -45,6 +53,7 @@ const initialState = {
       visibility: 'private',
       author: 'Team 2',
       githubConnected: false,
+      accessCount: 0,
     },
     {
       name: 'apiproject6',
@@ -53,6 +62,7 @@ const initialState = {
       visibility: 'public',
       author: 'Vladimir Gorej',
       githubConnected: true,
+      accessCount: 0,
     },
     {
       name: 'apiproject7',
@@ -61,11 +71,31 @@ const initialState = {
       visibility: 'private',
       author: 'Team 3',
       githubConnected: true,
+      accessCount: 0,
     },
 
   ],
 };
 
-export default handleActions({
+/**
+ * Case reducers
+ */
 
+const incrementAccessCount = (state, action) => {
+  const index = state.apiProjects.findIndex(pathEq(['name'], action.payload));
+
+  if (index === -1) { return state }
+
+  const apiProjects = over(lensPath([index, 'accessCount']), inc, state.apiProjects);
+
+  return { ...state, apiProjects };
+};
+
+
+/**
+ * Root reducer
+ */
+
+export default handleActions({
+  [actions.incrementAccessCount]: incrementAccessCount,
 }, initialState);

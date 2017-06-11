@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { includes, filter } from 'lodash/fp';
+import { includes, filter, orderBy } from 'lodash/fp';
 import { pipe, map, assocPath, concat, reverse, objOf, takeLast, length, prop, trim, toLower } from 'ramda';
 
 import { apiProjectsSelector } from '../../scenes/apiProjectList/selectors';
@@ -53,6 +53,7 @@ export const suggestionsSelector = createSelector(
   (query, searchQueries, apiProjectsMatchingQuery) => {
     let searchQueriesSuggestions = [];
 
+
     if (query === '') {
       searchQueriesSuggestions = pipe(
         takeLast(2),
@@ -62,7 +63,10 @@ export const suggestionsSelector = createSelector(
       )(searchQueries);
     }
 
-    const apiProjectsSuggestions = map(assocPath(['isLatestSearch'], false))(apiProjectsMatchingQuery);
+    const apiProjectsSuggestions = pipe(
+      map(assocPath(['isLatestSearch'], false)),
+      orderBy(['accessCount', 'title'], ['desc', 'asc'])
+    )(apiProjectsMatchingQuery);
 
     return concat(searchQueriesSuggestions, apiProjectsSuggestions);
   }

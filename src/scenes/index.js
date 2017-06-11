@@ -1,5 +1,5 @@
 import CoreLayout from '../layouts/components/CoreLayout';
-import Editor from './editor/components/Editor';
+import Editor from './editor/containers/Editor';
 import apiProjectList from './apiProjectList';
 
 

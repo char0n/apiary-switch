@@ -28,7 +28,6 @@ class Search extends React.Component {
   }
 
   onSuggestionSelected(event, { suggestion }) {
-
     this.props.onRememberSearchQuery(this.props.query);
 
     if (suggestion.isLatestSearch) {
