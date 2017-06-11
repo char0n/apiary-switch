@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const ApiProjectList = () => (
-  <div>api project list</div>
+  <main>api project list</main>
 );
 
 export default ApiProjectList;

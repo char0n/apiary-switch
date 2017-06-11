@@ -5,7 +5,9 @@ import editor from './editor.png';
 
 
 const Editor = () => (
-  <img src={editor} className="editor" alt="Editor" />
+  <main>
+    <img src={editor} className="editor" alt="Editor" />
+  </main>
 );
 
 export default Editor;
