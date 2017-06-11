@@ -42,6 +42,10 @@ class Search extends React.Component {
   onHandleSubmit(event) {
     event.preventDefault();
 
+    const isQueryEmpty = this.props.query.trim() === '';
+
+    if (isQueryEmpty) { return }
+
     this.props.onRememberSearchQuery(this.props.query);
     this.props.onGotoApiProjectList();
   }
