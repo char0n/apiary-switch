@@ -13,6 +13,6 @@ want to introduce more modern and user friendly switch component with more featu
 and better accessibility.
 
 I've used material-ui as a reference implementation of material design in React. 
-It allowed me to do rapid prototyping.
+It allowed me to do rapid prototyping. I used airbnb codestyle and eslint to keep
+me in line with this codestyle.
 
-Teams: https://help.apiary.io/api_101/understanding-apiary/
