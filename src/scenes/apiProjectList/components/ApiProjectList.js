@@ -5,6 +5,7 @@ import FontIcon from 'material-ui/FontIcon';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
+import { Link } from 'react-router';
 
 import './ApiProjectList.css';
 
@@ -64,7 +65,7 @@ class ApiProjectList extends React.Component {
         (
           <Card key={apiProject.name}>
             <CardHeader
-              title={apiProject.title}
+              title={<Link to={`/editor/${apiProject.name}`}>{apiProject.title}</Link>}
               subtitle={`${apiProject.author} - ${apiProject.name}`}
               actAsExpander={false}
               showExpandableButton={false}
