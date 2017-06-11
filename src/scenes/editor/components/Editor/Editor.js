@@ -25,8 +25,11 @@ class Editor extends React.Component {
 
   render() {
     return (
-      <main>
-        <img src={editor} className="editor" alt="Editor" />
+      <main className="editor">
+        <header className="editor__header">
+          <h1>{this.props.params.apiProjectName}</h1>
+        </header>
+        <img src={editor} className="editor__screen" alt="Editor" />
       </main>
     );
   }

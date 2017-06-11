@@ -1,4 +1,16 @@
 .editor {
+  position: relative;
+}
+
+.editor__screen {
   width: 100%;
   height: auto;
+}
+
+.editor__header {
+  position: absolute;
+  color: red;
+  top: 0;
+  width: 100%;
+  text-align: center;
 }
