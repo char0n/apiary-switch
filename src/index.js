@@ -5,6 +5,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { useRouterHistory } from 'react-router';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
+import injectTouchTapEvent from 'react-tap-event-plugin';
 
 import createStore from './store/createStore';
 import App from './components/App';
@@ -12,6 +13,8 @@ import registerServiceWorker from './registerServiceWorker';
 import scenes from './scenes';
 import './index.css';
 
+
+injectTouchTapEvent(); // https://github.com/callemall/material-ui/issues/1011
 
 // configure history for react-router
 const browserHistory = useRouterHistory(createBrowserHistory)({

@@ -1,4 +1,4 @@
-import ApiProjectList from './components/ApiProjectList';
+import ApiProjectList from './containers/ApiProjectList';
 
 // sync route definition.
 export default {
