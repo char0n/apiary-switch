@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const CoreLayout = ({ children }) => (
   <section className="core-layout">
     {children}
