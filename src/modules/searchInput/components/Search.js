@@ -19,6 +19,7 @@ class Search extends React.Component {
     // decorators not supported in create-react-app so compensating with this workaround pattern
     this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
     this.onSuggestionSelected = this.onSuggestionSelected.bind(this);
+    this.onHandleSubmit = this.onHandleSubmit.bind(this);
   }
 
   onSuggestionsFetchRequested({ value }) {
@@ -37,22 +38,31 @@ class Search extends React.Component {
     }
   }
 
+  onHandleSubmit(event) {
+    event.preventDefault();
+
+    this.props.onRememberSearchQuery(this.props.query);
+    this.props.onGotoApiProjectList();
+  }
+
   render() {
     return (
-      <Autosuggest
-        suggestions={this.props.suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionSelected={this.onSuggestionSelected}
-        onSuggestionsClearRequested={noop}
-        shouldRenderSuggestions={stubTrue}
-        getSuggestionValue={Search.stringifySuggestion}
-        renderSuggestion={Suggestion}
-        inputProps={{
-          placeholder: 'Search',
-          value: this.props.query,
-          onChange: noop,
-        }}
-      />
+      <form onSubmit={this.onHandleSubmit}>
+        <Autosuggest
+          suggestions={this.props.suggestions}
+          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+          onSuggestionSelected={this.onSuggestionSelected}
+          onSuggestionsClearRequested={noop}
+          shouldRenderSuggestions={stubTrue}
+          getSuggestionValue={Search.stringifySuggestion}
+          renderSuggestion={Suggestion}
+          inputProps={{
+            placeholder: 'Search',
+            value: this.props.query,
+            onChange: noop,
+          }}
+        />
+      </form>
     );
   }
 }
