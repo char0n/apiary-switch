@@ -37,27 +37,25 @@ class ApiProjectList extends React.Component {
           <section className="api-project-list__filter">
             <SelectField
               floatingLabelText="Filter"
-              value={1}
+              value={'no-criteria'}
               onChange={this.onFilter}
             >
-              <MenuItem value={1} primaryText="Never" />
-              <MenuItem value={2} primaryText="Every Night" />
-              <MenuItem value={3} primaryText="Weeknights" />
-              <MenuItem value={4} primaryText="Weekends" />
-              <MenuItem value={5} primaryText="Weekly" />
+              <MenuItem value={'no-criteria'} primaryText="No criteria" />
+              <MenuItem value={'is:private'} primaryText="Private" />
+              <MenuItem value={'is:public'} primaryText="Public" />
+              <MenuItem value={'is:ghconnected'} primaryText="Github connected" />
+              <MenuItem value={'is:swagger'} primaryText="Swagger" />
+              <MenuItem value={'is:apiblueprint'} primaryText="Api Blueprint" />
             </SelectField>
           </section>
           <section className="api-project-list__sort">
             <SelectField
-              floatingLabelText="Sort"
+              floatingLabelText="Sort by"
               value={1}
               onChange={this.onSort}
             >
-              <MenuItem value={1} primaryText="Never" />
-              <MenuItem value={2} primaryText="Every Night" />
-              <MenuItem value={3} primaryText="Weeknights" />
-              <MenuItem value={4} primaryText="Weekends" />
-              <MenuItem value={5} primaryText="Weekly" />
+              <MenuItem value={1} primaryText="Project title" />
+              <MenuItem value={2} primaryText="Recent visit" />
             </SelectField>
           </section>
         </header>
