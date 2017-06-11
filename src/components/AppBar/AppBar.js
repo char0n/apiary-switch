@@ -9,6 +9,7 @@ const AppBar = () => (
   <MdAppBar
     title="Apiary"
     className="app-bar"
+    style={{ position: 'fixed' }}
     showMenuIconButton={false}
   >
     <Search />

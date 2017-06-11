@@ -20,12 +20,14 @@ const fabStyle = {
 const App = ({ history, routes, ident }) => (
   <section className="app">
     <AppBar />
-    <Router history={history} key={ident}>
-      {routes}
-    </Router>
-    <FloatingActionButton secondary style={fabStyle}>
-      <ContentAdd />
-    </FloatingActionButton>
+    <section style={{ paddingTop: 64 }}>
+      <Router history={history} key={ident}>
+        {routes}
+      </Router>
+      <FloatingActionButton secondary style={fabStyle}>
+        <ContentAdd />
+      </FloatingActionButton>
+    </section>
   </section>
 );
 
