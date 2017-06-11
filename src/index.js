@@ -7,7 +7,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 
 import createStore from './store/createStore';
-import App from './App';
+import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import scenes from './scenes';
 import './index.css';

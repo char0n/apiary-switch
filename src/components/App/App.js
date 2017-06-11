@@ -2,7 +2,7 @@ import React from 'react';
 import { Router } from 'react-router';
 
 import './App.css';
-import AppBar from './components/AppBar';
+import AppBar from '../AppBar/index';
 
 
 const App = ({ history, routes, ident }) => (
