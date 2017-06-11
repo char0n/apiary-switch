@@ -1,0 +1,31 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "globals": {
+    "it": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "impliedStrict": true
+    }
+  },
+  "extends": [
+    "airbnb"
+  ],
+  "rules": {
+    "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
+    "max-len": [2, 120, 2],
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "never"
+    }]
+  }
+}

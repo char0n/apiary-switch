@@ -1,0 +1,15 @@
+.search-input-api-project {
+  width: calc(100% - 50px);
+  position: relative;
+  font-size: smaller;
+}
+
+.search-input-api-project__foooter {
+  font-size: x-small;
+}
+
+.search-input-api-project__aside {
+  position: absolute;
+  top: 15px;
+  right: -55px;
+}

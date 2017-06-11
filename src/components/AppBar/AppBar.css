@@ -1,0 +1,4 @@
+.app-bar h1 {
+  flex: 0 1 auto !important;
+  min-width: 150px;
+}
