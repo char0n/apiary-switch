@@ -27,13 +27,13 @@ class Search extends React.Component {
     this.props.onFilterSuggestions(value);
   }
 
-  onSuggestionSelected(event, { suggestion }) {
-    this.props.onRememberSearchQuery(this.props.query);
-
+  onSuggestionSelected(event, { suggestion, suggestionValue }) {
     if (suggestion.isLatestSearch) {
+      this.props.onRememberSearchQuery(suggestionValue);
       this.props.onFilterSuggestions(suggestion.title);
       this.props.onGotoApiProjectList();
     } else {
+      this.props.onRememberSearchQuery(this.props.query);
       this.props.onFilterSuggestions(this.props.query);
       this.props.onGotoEditor(suggestion.name);
     }
