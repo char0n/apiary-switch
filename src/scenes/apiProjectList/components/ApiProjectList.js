@@ -88,7 +88,7 @@ class ApiProjectList extends React.Component {
           </Card>
         ),
         (
-          <br />
+          <br key={`${apiProject.name}-br`} />
         ),
         ]))}
         {this.props.apiProjects.length === 0 && (
