@@ -2,12 +2,14 @@
 
 ## Infra
 
-I've used @facebookincubator/create-react-app to setup the initial repo and it provides
+I've used [@facebookincubator/create-react-app](https://github.com/facebookincubator/create-react-app) to setup the initial repo and it provides
 everything that we need to rapidly prototype any react concept.
 
 ## Wireframes
 
 Wireframes were created via https://wireframe.cc. Email vladimir.gorej@gmail.com to request access.
+Please refer to the annotations of the wireframe.cc proposal for expected behaviors. This code
+should act as a reference implementation of the wireframes.    
 
 ![Editor](public/img/1-Editor.png)
 ![Search-Focus](public/img/2-Search-Focus.png)
@@ -42,6 +44,15 @@ and then only when necessary add comments enplaning the additional complexity of
 
 I've used ES2016 to write the codebase.
 
+### Things learned
+
+I would suggest the Search Component to search also in blueprints source code. IMHO it would be quite 
+practical for the users to have this feature. Of course the priority algorithm of the search results
+will have to thought out carefully.
+
+Latest search in Search Component also seems promising. It allows me to list all my api projects matching
+string pattern on two clicks.
+
 ### Project structure
 
 ```
@@ -53,3 +64,14 @@ I've used ES2016 to write the codebase.
    /store - redux specific machinery
    /index.js - main entry point for React
 ```
+
+### TODO
+
+Api project list
+ - Sorting
+ - Filters
+ - Pagination
+ 
+There are [open issues](https://github.com/char0n/apiary-switch/issues) for these features on github.
+I did not implement these features because I did not considered them important to the demonstration
+of the switch component itself. They can be implemented at a later time if necessary.
