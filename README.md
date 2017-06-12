@@ -5,6 +5,15 @@
 I've used [@facebookincubator/create-react-app](https://github.com/facebookincubator/create-react-app) to setup the initial repo and it provides
 everything that we need to rapidly prototype any react concept.
 
+## Installation
+
+Clone and 
+
+```sh
+ $ npm i --verbose
+ $ npm start
+```
+
 ## Wireframes
 
 Wireframes were created via https://wireframe.cc. Email vladimir.gorej@gmail.com to request access.
