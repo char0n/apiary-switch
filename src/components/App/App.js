@@ -20,7 +20,7 @@ const fabStyle = {
 const App = ({ history, routes, ident }) => (
   <section className="app">
     <AppBar />
-    <section style={{ paddingTop: 64 }}>
+    <section className="app__container">
       <Router history={history} key={ident}>
         {routes}
       </Router>

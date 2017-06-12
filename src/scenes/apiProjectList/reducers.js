@@ -90,9 +90,9 @@ const initialState = {
 
 const incrementAccessCount = (state, action) => {
   const index = state.apiProjects.findIndex(pathEq(['name'], action.payload));
-  const isIndexNotFound = index === -1;
+  const isIndexFound = index !== -1;
 
-  if (isIndexNotFound) { return state }
+  if (!isIndexFound) { return state }
 
   return pipe(
     over(lensPath(['apiProjects', index, 'accessCount']), inc),

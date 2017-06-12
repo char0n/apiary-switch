@@ -25,9 +25,11 @@ class ApiProjectList extends React.Component {
 
   /* eslint-disable */
   onFilter(event, index, value) {
+    // TODO(vladimir.gorej@gmail.com): https://github.com/char0n/apiary-switch/issues/6
   }
 
   onSort(event, index, value) {
+    // TODO(vladimir.gorej@gmail.com): https://github.com/char0n/apiary-switch/issues/7
   }
   /* eslint-enable */
 

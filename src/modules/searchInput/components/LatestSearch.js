@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import FontIcon from 'material-ui/FontIcon';
 
+
 const iconStyle = {
   fontSize: '17px',
   marginRight: '10px',

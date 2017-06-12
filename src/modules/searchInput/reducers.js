@@ -22,7 +22,9 @@ const initialState = {
 const filterSuggestions = (state, action) => ({ ...state, query: action.payload });
 
 const rememberSearchQuery = (state, action) => {
-  if (action.payload.trim() === '') { return state }
+  const isQueryEmpty = action.payload.trim() === '';
+
+  if (isQueryEmpty) { return state }
 
   const searchQueries = state.searchQueries.concat(action.payload);
 
