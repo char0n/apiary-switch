@@ -65,7 +65,7 @@ export const suggestionsSelector = createSelector(
 
     const apiProjectsSuggestions = pipe(
       map(assocPath(['isLatestSearch'], false)),
-      orderBy(['accessCount', 'title'], ['desc', 'asc'])
+      orderBy(['lastAccessTime', 'title'], ['desc', 'asc'])
     )(apiProjectsMatchingQuery);
 
     return concat(searchQueriesSuggestions, apiProjectsSuggestions);

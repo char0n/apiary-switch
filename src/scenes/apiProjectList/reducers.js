@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { over, lensPath, pathEq, inc } from 'ramda';
+import { over, assocPath, pipe, lensPath, pathEq, inc } from 'ramda';
 
 import * as actions from './actions';
 
@@ -18,6 +18,7 @@ const initialState = {
       author: 'Vladimir Gorej',
       githubConnected: true,
       accessCount: 0,
+      lastAccessTime: Date.now(),
     },
     {
       name: 'apiproject2',
@@ -27,6 +28,7 @@ const initialState = {
       author: 'Team 1',
       githubConnected: true,
       accessCount: 0,
+      lastAccessTime: Date.now(),
     },
     {
       name: 'apiproject3',
@@ -36,6 +38,7 @@ const initialState = {
       author: 'Vladimir Gorej',
       githubConnected: false,
       accessCount: 0,
+      lastAccessTime: Date.now(),
     },
     {
       name: 'apiproject4',
@@ -45,6 +48,7 @@ const initialState = {
       author: 'Vladimir Gorej',
       githubConnected: false,
       accessCount: 0,
+      lastAccessTime: Date.now(),
     },
     {
       name: 'apiproject5',
@@ -54,6 +58,7 @@ const initialState = {
       author: 'Team 2',
       githubConnected: false,
       accessCount: 0,
+      lastAccessTime: Date.now(),
     },
     {
       name: 'apiproject6',
@@ -63,6 +68,7 @@ const initialState = {
       author: 'Vladimir Gorej',
       githubConnected: true,
       accessCount: 0,
+      lastAccessTime: Date.now(),
     },
     {
       name: 'apiproject7',
@@ -72,6 +78,7 @@ const initialState = {
       author: 'Team 3',
       githubConnected: true,
       accessCount: 0,
+      lastAccessTime: Date.now(),
     },
 
   ],
@@ -87,9 +94,10 @@ const incrementAccessCount = (state, action) => {
 
   if (isIndexNotFound) { return state }
 
-  const apiProjects = over(lensPath([index, 'accessCount']), inc, state.apiProjects);
-
-  return { ...state, apiProjects };
+  return pipe(
+    over(lensPath(['apiProjects', index, 'accessCount']), inc),
+    assocPath(['apiProjects', index, 'lastAccessTime'], Date.now())
+  )(state);
 };
 
 
